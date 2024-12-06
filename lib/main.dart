@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
-    home: Home(),
-  ),
+  home: Home(),
+),
 );
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
   const Home({super.key});
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,22 +33,31 @@ class _HomeState extends State<Home> {
                   width: 100.00,
                 ),
                 Column(
-                children: [Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    'Immagine qui a fianco',
-                    style: TextStyle(
-                        color:Colors.white,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top:0.0,left:8.0,right:8.0,bottom:24.0),
+                      child: Text(
+                        'Immagine qui a fianco',
+                        style: TextStyle(
+                          color:Colors.white,
+                        ),
+                      ),
                     ),
-                  ),
+                    Text(
+                      'Data',
+                      style: TextStyle(
+                        color:Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  'Data',
-                  style: TextStyle(
-                    color:Colors.white,
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      Online(),
+                    ],
                   ),
-                ),
-    ],
                 ),
               ],
             ),
@@ -63,4 +67,32 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+class Online extends StatefulWidget {
+  const Online({super.key});
+
+  @override
+  State<Online> createState() => _OnlineState();
+}
+
+class _OnlineState extends State<Online> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Card(
+        color: Colors.green[600],
+        child: const Text(
+            'online',
+            style:TextStyle(
+                color: Colors.white
+            )
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
 
