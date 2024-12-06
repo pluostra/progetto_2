@@ -46,7 +46,14 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
-               Online(),
+               Column(
+                 children: [
+                   Padding(
+                     padding: EdgeInsets.only(top:51.0,left:8.0,right:8.0,bottom:0.0),
+                     child: Online(),
+                   ),
+                 ],
+               ),
               ],
             ),
           ],
