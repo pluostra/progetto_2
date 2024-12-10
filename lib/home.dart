@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -62,20 +61,19 @@ class _HomeState extends State<Home> {
                  children: [
                    Padding(
                      padding: const EdgeInsets.only(top:40.0,left:8.0,right:8.0,bottom:0.0),
-                     child: Container(
-                       width: 50.0,
-                       height: 22.0,
-                       decoration: BoxDecoration(
-                         borderRadius: BorderRadius.circular(16.0),
-                         color: stato_colore,
-                       ),
-                       child:  Text(
-                         stato_stringa,
-                         style: const TextStyle(
-                           fontSize: 13.0,
-                           color: Colors.white,
+                     child: Card(
+                       color: stato_colore,
+                       child: SizedBox(
+                         width: 76,
+                       height: 28,
+                       child: Text(
+                           stato_stringa,
+                           style: const TextStyle(
+                             fontSize: 18.0,
+                             color: Colors.white,
+                           ),
+                           textAlign: TextAlign.center,
                          ),
-                         textAlign: TextAlign.center,
                        ),
                      ),
                    ),
@@ -95,7 +93,7 @@ class _HomeState extends State<Home> {
             stato_stringa = 'offline';
           }
           else if(randomNum == 2){
-            stato_colore = Colors.yellowAccent;
+            stato_colore = const Color.fromRGBO(255, 204, 0, 0.8);
             stato_stringa = 'waiting';
           }
           else {
@@ -103,7 +101,8 @@ class _HomeState extends State<Home> {
             stato_stringa = 'online';
           }
           });
-        }
+        },
+        child: const Text('click'),
       ),
     );
   }
